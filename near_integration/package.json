@@ -12,6 +12,11 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
-    "near-api-js": "^1.1.0"
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "buffer": "npm:Buffer@^0.0.0",
+    "Buffer": "^0.0.0",
+    "near-api-js": "^1.1.0",
+    "rollup-plugin-polyfill-node": "^0.12.0"
   }
 }
