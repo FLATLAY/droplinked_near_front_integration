@@ -70,4 +70,21 @@ document.getElementById("connect").addEventListener("click" , ()=>{
 });
 ```
 
-## 3. Coming soon...
+## 3. Record product
+you can use `near_record.js` to record a product on the blockchain. It provides `near_record_product` which you can use like this : 
+```js
+let amount = 1230;
+let price_in_usd = 103;
+let product_name = "prod_test";
+console.log("minted holder_id =>" , await near_record_product({ 
+    "name" : "test product",
+    "size" : "10",
+    "color" : "red",
+    "description" : "this is a test product",
+    "image" : "https://ipfs.io ipfs hash"
+    },
+    product_name, price_in_usd, amount
+));
+```
+
+## 4. Coming soon...
