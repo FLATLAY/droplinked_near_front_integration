@@ -1,22 +1,3 @@
-# Droplinked-NEAR front Integration
-This repo contains js functionalities inoreder to comunicate with the deployed contract on NEAR (or to comunicate with other contracts in order to implement token_gating and other building blocks that droplinked needs).
-
----
-
-## Run
-In the near_integration folder run
-```shell
-npm run dev
-```
-
----
-
-## Different parts
-
-## 1. token_utils
-
-token_utils gaves you the needed functions to interact with `view` methods of the contract. this methods are free to run, and can not change the state of the chain, and only are used to get a info from contract. you can get access to all contract's `view` methods like this : 
-```js
 import * as near_utils from './near_utils/utils'
 import * as token_utils from './near_utils/token_utils'
 
@@ -46,28 +27,3 @@ console.log("publisher_approveds for owner_account = pub_droplinked.testnet is =
 console.log("producer_approveds for owner_account = prod_droplinked.testnet is ==> ", await token_utils.get_producers_approved(owner_account));
 
 console.log("NFT objects for owner_account = prod_droplinked.testnet is ==> ", await token_utils.get_owner_nfts(owner_account));
-
-```
-
-## 2. Login system
-you can use `near_auth.js` to manage your session with NEAR wallet. It provides `near_log_in` and `near_disconnect` which you can use like this : 
-```js
-import * as near_authentication from './near_utils/near_auth'
-
-// Log in function, checks for previous login, and if the user is logged in, it will only return the account_id of the user, and does not attempt to log in again!
-let account_id = near_authentication.near_log_in();
-console.log("Logged in with user : " , account_id);
-
-//Button click for disconnect
-document.getElementById("disconnect").addEventListener("click" , ()=>{
-    near_authentication.near_disconnect();
-});
-
-//Button click for connect (login)
-document.getElementById("connect").addEventListener("click" , ()=>{
-    let account_id = near_authentication.near_log_in();
-    console.log("Logged in with user : ", account_id);
-});
-```
-
-## 3. Coming soon...

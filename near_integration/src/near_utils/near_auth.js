@@ -1,5 +1,6 @@
 import * as near_utils from './utils'
-const { connect, keyStores, WalletConnection } = near_utils.nearAPI;
+import * as nearAPI from 'near-api-js'
+const { connect, keyStores, WalletConnection } = nearAPI;
 export const connectionConfig = {
   networkId: "testnet",
   keyStore: new keyStores.BrowserLocalStorageKeyStore(),
@@ -11,7 +12,7 @@ export const connectionConfig = {
 export const nearConnection = await connect(connectionConfig);
 export const walletConnection = new WalletConnection(nearConnection);
 
-export function is_connected(){
+function is_connected(){
     return walletConnection.isSignedIn();
 }
 
