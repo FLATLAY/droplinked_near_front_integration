@@ -73,6 +73,8 @@ document.getElementById("connect").addEventListener("click" , ()=>{
 ## 3. Record product
 you can use `near_record.js` to record a product on the blockchain. It provides `near_record_product` which you can use like this : 
 ```js
+import {near_record_product} from './near_utils/near_record'
+
 let amount = 1230;
 let price_in_usd = 103;
 let product_name = "prod_test";
