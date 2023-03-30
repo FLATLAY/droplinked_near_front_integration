@@ -17,6 +17,7 @@
     "buffer": "npm:Buffer@^0.0.0",
     "Buffer": "^0.0.0",
     "near-api-js": "^1.1.0",
+    "nft.storage": "^7.0.3",
     "rollup-plugin-polyfill-node": "^0.12.0"
   }
 }

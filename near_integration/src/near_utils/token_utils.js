@@ -6,7 +6,7 @@ import * as near_utils from './utils'
  * @returns {Promise<{"name" : string, "token_uri" : string, "checksum" : string, "price" : string}>}
  */
 export async function get_token_metadata(token_id){
-    return JSON.parse(await near_utils.contract_view_method("get_token_metadata" , {"token_id":1}));
+    return JSON.parse(await near_utils.contract_view_method("get_token_metadata" , {"token_id":token_id}));
 }
 
 /**
