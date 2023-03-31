@@ -4,7 +4,7 @@ import * as near_utils from './utils'
  * @param {*} metadata can be anything 
  * @param {string} product_name 
  * @param {number | string} price_in_usd 
- * @returns {Promise<number>}
+ * @returns {Promise<number>} holder_id for the minted product
  */
 export async function near_record_product(metadata, product_name, price_in_usd, amount){
     let ipfs_hash = await near_utils.ipfs_add(metadata);

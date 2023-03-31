@@ -89,4 +89,13 @@ console.log("minted holder_id =>" , await near_record_product({
 ));
 ```
 
-## 4. Coming soon...
+## 4. Publish Request
+you can use `near_publish_req.js` to publish a request on the blockchain. It provides `publish_request` which you can use like this : 
+```js
+import * as near_publish_util from './near_utils/near_publish_req';
+let producer_account = "prod_droplinked.testnet";
+let amount = 3;
+let holder_id = 1;
+let comission = 24;
+console.log("The request_id for request is =>" , await near_publish_util.publish_request(producer_account,amount,holder_id,comission));
+```
