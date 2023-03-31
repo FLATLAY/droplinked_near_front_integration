@@ -35,8 +35,8 @@ export function from_base64(input_string){
  * @param {*} method_args : arguments to pass to that method (you should pass in a dict)
  * @returns {*} result of the method call
  */
-export async function contract_call_method(method_name, method_args){
-    let result_status = (await walletConnection.account().functionCall({contractId : contract_account_id, methodName : method_name, args : method_args})).status;
+export async function contract_call_method(method_name, method_args,deposit_value=0){
+    let result_status = (await walletConnection.account().functionCall({contractId : contract_account_id, methodName : method_name, args : method_args, attachedDeposit : deposit_value})).status;
     if (result_status.SuccessValue !== undefined){
         // decode it from base64 (note : we do not want to use Buffer package!)
         // Decode : 

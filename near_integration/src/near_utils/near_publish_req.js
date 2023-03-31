@@ -13,12 +13,12 @@ export async function publish_request(producer_account, amount, holder_id, comis
         "amount" : amount,
         "holder_id" : holder_id,
         "comission" : comission
-    });
+    }, "630000000000000000000"); 
 }
 
 //Usage : 
-let producer_account = "prod_droplinked.testnet";
-let amount = 3;
-let holder_id = 1;
-let comission = 24;
-console.log("The request_id for request is =>" , await publish_request(producer_account,amount,holder_id,comission));
+// let producer_account = "prod_droplinked.testnet";
+// let amount = 3;
+// let holder_id = 1;
+// let comission = 24;
+// console.log("The request_id for request is =>" , await publish_request(producer_account,amount,holder_id,comission));

@@ -15,7 +15,7 @@ export async function near_record_product(metadata, product_name, price_in_usd, 
         "checksum" : checksum,
         "price" : price_in_usd,
         "amount" : amount
-    });
+    }, "780000000000000000000");
 }
 
 /*
