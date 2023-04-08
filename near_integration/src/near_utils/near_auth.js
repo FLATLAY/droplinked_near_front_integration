@@ -1,16 +1,29 @@
 import * as near_utils from './utils'
 import * as nearAPI from 'near-api-js'
 const { connect, keyStores, WalletConnection } = nearAPI;
-export const connectionConfig = {
-  networkId: "testnet",
-  keyStore: new keyStores.BrowserLocalStorageKeyStore(),
-  nodeUrl: "https://rpc.testnet.near.org",
-  walletUrl: "https://wallet.testnet.near.org",
-  helperUrl: "https://helper.testnet.near.org",
-  explorerUrl: "https://explorer.testnet.near.org",
+export const mainNetconnectionConfig = {
+    networkId: "mainnet",
+    keyStore: new keyStores.BrowserLocalStorageKeyStore(), 
+    nodeUrl: "https://rpc.mainnet.near.org",
+    walletUrl: "https://wallet.mainnet.near.org",
+    helperUrl: "https://helper.mainnet.near.org",
+    explorerUrl: "https://explorer.mainnet.near.org",
 };
-export const nearConnection = await connect(connectionConfig);
+export const testNetconnectionConfig = {
+    networkId: "testnet",
+    keyStore: new keyStores.BrowserLocalStorageKeyStore(),
+    nodeUrl: "https://rpc.testnet.near.org",
+    walletUrl: "https://wallet.testnet.near.org",
+    helperUrl: "https://helper.testnet.near.org",
+    explorerUrl: "https://explorer.testnet.near.org",
+  };
+  
+
+export const nearConnection = await connect(testNetconnectionConfig);
+export const nearConnectionMainnet = await connect(mainNetconnectionConfig);
 export const walletConnection = new WalletConnection(nearConnection);
+export const walletConnectionMainnet = new WalletConnection(nearConnectionMainnet);
+
 
 function is_connected(){
     return walletConnection.isSignedIn();
