@@ -64,7 +64,6 @@ export async function checksum(sku_properties){
     const digest = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     return digest;
 }
-
 export {
     nearAPI
 };

@@ -24,6 +24,8 @@ export const nearConnectionMainnet = await connect(mainNetconnectionConfig);
 export const walletConnection = new WalletConnection(nearConnection);
 export const walletConnectionMainnet = new WalletConnection(nearConnectionMainnet);
 
+export const near = new nearAPI.Near(testNetconnectionConfig);
+export const near_main = new nearAPI.Near(mainNetconnectionConfig);
 
 function is_connected(){
     return walletConnection.isSignedIn();
